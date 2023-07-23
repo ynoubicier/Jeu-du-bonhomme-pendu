@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Bonhomme pendu</title>
+   <style type="text/css">
+      BODY { font-family:Verdana; font-size:16px; }
+      .sTitreApplication { margin-top:0px; line-height:30px; font-size:32px; font-weight:bold; }
+      .sEntete { background-color:#CCCCCC; }
+      TD { border:solid 1px black; padding:5px; }
+      A { color:Blue; text-decoration:none; }
+   </style>
+</head>
+<body>
+   <p class="sTitreApplication">
+      Exécution de l'application DEFAULT.ASPX...
+   </p>
+   <table>
+      <tr>
+         <td class="sEntete">Exécution</td><td class="sEntete">Commentaires</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx" target="_blank">Aucun paramètre</a></td><td>ERREUR : aucun mot spécifié; anticonstitutionnellement sera le mot à trouver</td><td rowspan="6">'anticonstitutionnellement' sera le mot à trouver</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot" target="_blank">?Mot</a></td><td>ERREUR : aucun mot spécifié</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=" target="_blank">?Mot=</a></td><td>ERREUR : aucun mot spécifié</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=ABCDEFGHIJKLMNOPQRSTUVWXYZ-'A" target="_blank">?Mot=ABCDEFGHIJKLMNOPQRSTUVWXYZ-'A</a></td><td>ERREUR : plus de 28 caractères</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=1BCDEFGHIJKLMNOPQRSTUVWXYZ-'" target="_blank">?Mot=1BCDEFGHIJKLMNOPQRSTUVWXYZ-'</a></td><td>ERREUR : '1' non permis</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=éBCDEFGHIJKLMNOPQRSTUVWXYZ-'" target="_blank">?Mot=éBCDEFGHIJKLMNOPQRSTUVWXYZ-'</a></td><td>ERREUR : 'é' non permis</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=ABCDEFGHIJKLMNOPQRSTUVWXYZ-'" target="_blank">?Mot=ABCDEFGHIJKLMNOPQRSTUVWXYZ-'</a></td><td>Ok</td><td rowspan="4">Le mot à trouver sera celui qui suit le ?Mot=</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=Abat-jour" target="_blank">?Mot=Abat-jour</a></td><td>Ok</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=aujourd'hui" target="_blank">?Mot=aujourd'hui</a></td><td>Ok</td>
+      </tr>
+      <tr>
+         <td><a href="default.aspx?Mot=JE-me-MOI-tu-TE-toi" target="_blank">?Mot=JE-me-MOI-tu-TE-toi</a></td><td>Ok</td>
+      </tr>
+   </table>
+</body>
+</html>
